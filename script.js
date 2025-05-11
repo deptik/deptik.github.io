@@ -1,10 +1,11 @@
 const img = document.getElementById('cat-image');
 const btn = document.getElementById('flashlight-btn');
+const soundWoah = document.getElementById('sound-woah');
+const soundBoah = document.getElementById('sound-boah');
 
 let isAngry = false;
 let flashlightOn = false;
 
-// Bild wechseln
 function toggleImage() {
   isAngry = !isAngry;
   img.src = isAngry
@@ -12,7 +13,6 @@ function toggleImage() {
     : 'img/katze-gluecklich.jpg';
 }
 
-// Hover-Ereignisse (nicht mehr relevant für Button)
 img.addEventListener('mouseenter', () => {
   if (!isAngry) toggleImage();
 });
@@ -22,18 +22,14 @@ img.addEventListener('mouseleave', () => {
 img.addEventListener('click', toggleImage);
 img.addEventListener('touchstart', toggleImage);
 
-// Timer für den Button (nach 5 Sekunden)
 setTimeout(() => {
-  // Button erscheint nach 5 Sekunden
   btn.classList.add('show');
 }, 5000);
 
-// Overlay erzeugen
 const overlay = document.createElement('div');
 overlay.id = 'dark-overlay';
 document.body.appendChild(overlay);
 
-// Mausbewegung für Taschenlampe
 document.addEventListener('mousemove', (e) => {
   if (flashlightOn) {
     overlay.style.setProperty('--x', `${e.clientX}px`);
@@ -44,11 +40,20 @@ document.addEventListener('mousemove', (e) => {
 btn.addEventListener('click', () => {
   flashlightOn = !flashlightOn;
 
-  // Statt display: block/none verwenden wir opacity und visibility
   if (flashlightOn) {
-    overlay.classList.add('visible'); // Overlay sichtbar machen
+    overlay.classList.add('visible');
+
+    // Kleiner Delay für Soundeffekt (200ms)
+    setTimeout(() => {
+      soundWoah.currentTime = 0;
+      soundWoah.play();
+    }, 200);
   } else {
-    overlay.classList.remove('visible'); // Overlay unsichtbar machen
+    overlay.classList.remove('visible');
+
+    setTimeout(() => {
+      soundBoah.currentTime = 0;
+      soundBoah.play();
+    }, 200);
   }
 });
-
