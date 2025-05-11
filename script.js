@@ -9,8 +9,8 @@ let flashlightOn = false;
 function toggleImage() {
   isAngry = !isAngry;
   img.src = isAngry
-    ? 'img/katze-boese.jpg'
-    : 'img/katze-gluecklich.jpg';
+    ? 'img/angy.jpg'
+    : 'img/blurp.jpg';
 }
 
 img.addEventListener('mouseenter', () => {
