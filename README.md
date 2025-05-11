@@ -1,1 +1,0 @@
-# deptik.github.io
