@@ -41,8 +41,14 @@ document.addEventListener('mousemove', (e) => {
   }
 });
 
-// Button-Klick: Flashlight ein/aus
 btn.addEventListener('click', () => {
   flashlightOn = !flashlightOn;
-  overlay.style.display = flashlightOn ? 'block' : 'none';
+
+  // Statt display: block/none verwenden wir opacity und visibility
+  if (flashlightOn) {
+    overlay.classList.add('visible'); // Overlay sichtbar machen
+  } else {
+    overlay.classList.remove('visible'); // Overlay unsichtbar machen
+  }
 });
+
