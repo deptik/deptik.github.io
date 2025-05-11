@@ -64,18 +64,14 @@ img {
   mask-image: radial-gradient(circle 200px at var(--x, 50%) var(--y, 50%), transparent 0%, black 100%);
   -webkit-mask-image: radial-gradient(circle 200px at var(--x, 50%) var(--y, 50%), transparent 0%, black 100%);
   z-index: 1000;
-  opacity: 0; /* Standardmäßig unsichtbar */
-  visibility: hidden; /* Verhindert Interaktionen, wenn das Overlay unsichtbar ist */
-  transition: opacity 0.6s ease, visibility 0s 0.6s, transform 0.6s ease; /* Übergang für opacity, visibility und transform */
-  transform: scale(0); /* Beginnt mit 0, um es unsichtbar zu machen */
+  display: none;
+  transition: all 0.6s ease;  /* Hinzugefügt für die sanfte Übergangsanimation */
 }
 
-#dark-overlay.visible {
-  opacity: 1; /* Macht das Overlay sichtbar */
-  visibility: visible; /* Ermöglicht Interaktionen */
-  transform: scale(20); /* Vergrößert das Overlay bei Sichtbarkeit */
+/* Optional: Du kannst auch die Farbe des gesamten Hintergrunds animieren */
+body {
+  transition: background-color 0.6s ease;  /* Übergang der Hintergrundfarbe */
 }
-
 
 
 
