@@ -1,5 +1,5 @@
 body {
- cursor: "😺", auto;
+ cursor: url("img/cursor-cat.png") 16 16, auto;
  margin: 0;
  padding: 0;
  display: flex;
