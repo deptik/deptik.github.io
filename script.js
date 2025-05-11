@@ -43,7 +43,6 @@ btn.addEventListener('click', () => {
   if (flashlightOn) {
     overlay.classList.add('visible');
 
-    // Kleiner Delay für Soundeffekt (200ms)
     setTimeout(() => {
       soundWoah.currentTime = 0;
       soundWoah.play();
