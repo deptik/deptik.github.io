@@ -73,11 +73,6 @@ img {
 #dark-overlay.visible {
   opacity: 1; /* Macht das Overlay sichtbar */
   visibility: visible; /* Ermöglicht Interaktionen */
+  transition: opacity 0.6s ease, visibility 0s 0s; /* Ändert nur die Zeit für das visibility */
 }
-
-/* Optional: Du kannst auch die Farbe des gesamten Hintergrunds animieren */
-body {
-  transition: background-color 0.6s ease;
-}
-
 
