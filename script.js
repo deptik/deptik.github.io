@@ -46,13 +46,13 @@ btn.addEventListener('click', () => {
     setTimeout(() => {
       soundWoah.currentTime = 0;
       soundWoah.play();
-    }, 200);
+    }, 2);
   } else {
     overlay.classList.remove('visible');
 
     setTimeout(() => {
       soundBoah.currentTime = 0;
       soundBoah.play();
-    }, 200);
+    }, 2);
   }
 });
