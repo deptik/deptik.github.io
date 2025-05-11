@@ -1,12 +1,12 @@
 body {
- cursor: url("img/cursor-cat.png") 16 16, auto;
- margin: 0;
- padding: 0;
- display: flex;
- justify-content: center;
- align-items: center;
- height: 100vh;
- background: #f0f0f0;
+  cursor: url("img/cursor-cat.png") 16 16, auto;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f0f0;
 }
 
 .image-container {
