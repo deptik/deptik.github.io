@@ -2,7 +2,6 @@ const img = document.getElementById('cat-image');
 const btn = document.getElementById('flashlight-btn');
 
 let isAngry = false;
-let hoverCount = 0;
 let flashlightOn = false;
 
 // Bild wechseln
@@ -13,22 +12,21 @@ function toggleImage() {
     : 'img/katze-gluecklich.jpg';
 }
 
-// Hover + Hover-Zähler
+// Hover-Ereignisse (nicht mehr relevant für Button)
 img.addEventListener('mouseenter', () => {
   if (!isAngry) toggleImage();
-  hoverCount++;
-  if (hoverCount >= 10 && !btn.classList.contains('show')) {
-    btn.classList.add('show');
-  }
 });
-
 img.addEventListener('mouseleave', () => {
   if (isAngry) toggleImage();
 });
-
-// Klick / Touch
 img.addEventListener('click', toggleImage);
 img.addEventListener('touchstart', toggleImage);
+
+// Timer für den Button (nach 5 Sekunden)
+setTimeout(() => {
+  // Button erscheint nach 5 Sekunden
+  btn.classList.add('show');
+}, 5000);
 
 // Overlay erzeugen
 const overlay = document.createElement('div');
