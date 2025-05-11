@@ -30,3 +30,26 @@ img {
  user-select: none;
  -webkit-user-drag: none;
 }
+
+#flashlight-btn {
+  position: fixed;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 20px;
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.6s ease;
+  z-index: 1001;
+}
+
+#flashlight-btn.show {
+  bottom: 40px;
+  opacity: 1;
+}
+
