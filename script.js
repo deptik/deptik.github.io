@@ -9,7 +9,6 @@ function toggleImage() {
  : 'img/katze-gluecklich.jpg';
 }
 
-new window.cursorEffects.emojiCursor({emoji: ["🥹"]});
 // Desktop
 img.addEventListener('mouseenter', () => {
  if (!isAngry) toggleImage();
