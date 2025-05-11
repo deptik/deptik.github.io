@@ -1,24 +1,31 @@
-const img = document.getElementById('cat-image');
-
-let isAngry = false;
-
-function toggleImage() {
-  isAngry = !isAngry;
-  img.src = isAngry
-    ? 'img/katze-boese.jpg'
-    : 'img/katze-gluecklich.jpg';
+body {
+ margin: 0;
+ padding: 0;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+ background: #f0f0f0;
 }
 
-// Für Desktop
-img.addEventListener('mouseenter', () => {
-  if (!isAngry) toggleImage();
-});
-img.addEventListener('mouseleave', () => {
-  if (isAngry) toggleImage();
-});
-img.addEventListener('click', toggleImage);
+.image-container {
+ width: 300px;
+ height: 300px;
+ position: relative;
+ transition: transform 0.3s ease;
+}
 
-// Für Mobile
-img.addEventListener('touchstart', () => {
-  toggleImage();
-});
+.image-container:hover {
+ transform: scale(1.05);
+}
+
+img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ border-radius: 15px;
+ transition: filter 0.3s ease;
+ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+ user-select: none;
+ -webkit-user-drag: none;
+}
