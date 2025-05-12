@@ -1,6 +1,5 @@
 body {
   cursor: url("cursor-cat.png") 16 16, auto;
-  cursor: url("cursor-pointer.png") 16 16, pointer;
   margin: 0;
   padding: 0;
   display: flex;
